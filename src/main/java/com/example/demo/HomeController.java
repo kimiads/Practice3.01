@@ -11,12 +11,12 @@ import javax.validation.Valid;
 @Controller
 public class HomeController {
     @GetMapping("/dogform")
-    public String loadCarForm(Model model){
+    public String loadDogForm(Model model){
         model.addAttribute("dog", new Dog());
         return "dogform";
     }
     @PostMapping("/dogform")
-    public String processCarForm(@Valid Dog dog,
+    public String processDogForm(@Valid Dog dog,
                                  BindingResult result){
         if (result.hasErrors()){
             return "dogform";
